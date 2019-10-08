@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <PropertyFilter/>
+    <PropertyFilter v-bind:filterProperties="filterProperties"/>
   </div>
 </template>
 
@@ -9,6 +9,16 @@ import PropertyFilter from './components/PropertyFilter.vue'
 
 export default {
   name: 'app',
+  data: function() {
+    return {
+      filterProperties: [{
+        id: 0,
+        name: '',
+        operator: 'eq',
+        value: ''
+      }]
+    }
+  },
   components: {
     PropertyFilter
   }
